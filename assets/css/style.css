@@ -9,10 +9,47 @@ body {
 }
 
 
-h1 {
-    height:100vh;
+header {
+    height:100px;
     display:flex;
     justify-content: center;
     align-items: center;
+    box-shadow:0px 0px 5px 1px lightgray;
+}
+
+main {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:400px;
+}
+
+main > button {
+
+    padding:15px 40px;
+    font-size:24px;
+    cursor:pointer;
+    transition:500ms;
+    letter-spacing: 4px;
+
+    border:1px solid skyblue;
+    background-color:#f1f1f1;
+    color:#333333;
+}
+
+main > button:hover {
+
+    /* box-shadow:inset 0px 0px 5px 1px rgb(27, 67, 81); */
+    border:1px solid white;
+    background-color:rgb(65, 178, 223);
+    color:white;
+}
+
+header:hover ~ main > button {
+    transform: scale(1.5);
+    color:red;
+    background:black;
+    letter-spacing: 15px;
+
 }
 

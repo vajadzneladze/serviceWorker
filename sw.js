@@ -17,7 +17,7 @@ self.addEventListener('install', function (event) {
                 console.log('Opened cache');
                 return cache.addAll(CACHE_FILES);
             })
-    )
+    )  
 })
 
 
