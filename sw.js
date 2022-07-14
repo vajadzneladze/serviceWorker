@@ -12,11 +12,12 @@ let CACHE_FILES = [
 selft.addEventListener('install', e => {
 
     selft.skipWaiting();
+    
     e.waitUntil(
         caches.open(CACHE_VERSION)
-        .then(() => {
+        .then( cache => {
             console.log(' Cache Opened');
-            return caches.addAll(CACHE_FILES);
+            return cache.addAll(CACHE_FILES);
         })
     )
 })
