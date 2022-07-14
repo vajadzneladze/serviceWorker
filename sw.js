@@ -3,7 +3,10 @@ importScripts('assets/js/cache-polyfill.js');
 let CACHE_VERSION =  'v1';
 let CACHE_FILES = [
     './',
-    'index.html'
+    'index.html',
+    'assets/style/style.css',
+    'assets/js/cache-polyfill.js',
+    'assets/img/icon.png'
 ]
 
 selft.addEventListener('install', e => {
