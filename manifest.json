@@ -1,0 +1,16 @@
+{
+    "short_name": "oa",
+    "name": "Offline App",
+    "description": "First try ,  service worker , offline web app",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "assets/image/icon.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        }
+    ],
+    "start_url": ".",
+    "theme_color": "#000000"
+
+}
