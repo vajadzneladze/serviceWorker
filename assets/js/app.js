@@ -23,5 +23,23 @@ window.addEventListener('beforeinstallprompt', e => {
     addBtn.style.display = 'block';
 
 
+    addBtn.addEventListener('click', () => {
+
+        addBtn.style.display = 'none';
+        defferedPromt.prompt();
+        defferedPromt.userChoice.then((choiceResult) => {
+            if(choiceResult.outcome === 'accepted') {
+                console.log('App is installing');
+            } else {
+                console.log('User dismissed the prompt');
+            }
+
+            defferedPromt = null;
+
+        })
+
+
+    })
+
 
 });
