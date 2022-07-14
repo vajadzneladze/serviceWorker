@@ -7,29 +7,26 @@ let CACHE_FILES = [
     'assets/css/style.css',
     'assets/js/cache-polyfill.js',
     'assets/img/icon.png'
-]
+];
 
-selft.addEventListener('install', e => {
-
-    selft.skipWaiting();
-    
-    e.waitUntil(
+self.addEventListener('install', function (event) {
+    self.skipWaiting();
+    event.waitUntil(
         caches.open(CACHE_VERSION)
-        .then( cache => {
-            console.log(' Cache Opened');
-            return cache.addAll(CACHE_FILES);
-        })
+            .then(function (cache) {
+                console.log('Opened cache');
+                return cache.addAll(CACHE_FILES);
+            })
     )
 })
 
 
-self.addEventListener('fetch', e => {
-    let online = navigator.online;
-    if(!online) {
-        e.respondWith(
-            caches.match(e.request).then( res => {
-
-                if(res){
+self.addEventListener('fetch', function (event) {
+    let online = navigator.onLine
+    if (!online) {
+        event.respondWith(
+            caches.match(event.request).then(function (res) {
+                if (res) {
                     return res;
                 }
             })
@@ -38,13 +35,14 @@ self.addEventListener('fetch', e => {
 })
 
 
-self.addEventListener('activate', e => {
-
-    e.waitUntil(
-        caches.keys().then( (keys, i) => {
-            if(keys !== CACHE_VERSION){
-                return caches.delete(keys[i])
-            }
+self.addEventListener('activate', function(event){
+    event.waitUntil(
+        caches.keys().then(function(keys){
+            return prompt.all(keys.map(function(keys, i){
+                if(keys !== CACHE_VERSION){
+                    return caches.delete(keys[i]);
+                }
+            }))
         })
     )
 })
