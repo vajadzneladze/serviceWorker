@@ -23,7 +23,11 @@ window.addEventListener('beforeinstallprompt', e => {
     addBtn.style.display = 'block';
 
 
+    console.log('here we go');
+
     addBtn.addEventListener('click', () => {
+
+        console.log( ' click function ')
 
         addBtn.style.display = 'none';
         defferedPromt.prompt();
