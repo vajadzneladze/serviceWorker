@@ -4,7 +4,7 @@ let CACHE_VERSION =  'v1';
 let CACHE_FILES = [
     './',
     'index.html',
-    'assets/style/style.css',
+    'assets/css/style.css',
     'assets/js/cache-polyfill.js',
     'assets/img/icon.png'
 ]
